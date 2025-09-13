@@ -48,3 +48,39 @@ private void BotonConvertirActionPerformed(java.awt.event.ActionEvent evt) {
     }
 }
 
+## 🧠 Explicación paso a paso
+
+### Obtención de datos de entrada
+- Se toma el número que el usuario escribió en el campo `Cantidad`.
+- Se obtienen los índices seleccionados en los `JComboBox` `Unidad` (unidad origen) y `Convertira` (unidad destino).
+
+### Definición de factores de conversión
+- El arreglo `factores` indica cuántos **Bytes equivale 1 unidad** de cada tipo.
+- El orden es: Bits → Bytes → KB → MB → GB → TB.
+- Ejemplo: `1.0/8` significa que 1 bit es 1/8 de byte.
+
+### Conversión a Bytes como unidad base
+- Se multiplica la cantidad ingresada por el factor correspondiente a la unidad de entrada, para obtener el valor en **Bytes**.
+
+### Conversión a la unidad de destino
+- Se divide el valor en Bytes entre el factor de la unidad de destino para obtener el resultado convertido.
+
+### Mostrar resultado
+- Se convierte el resultado a texto y se muestra en el campo `Resultado`.
+
+### Manejo de errores
+- Si el valor en `Cantidad` no es un número válido, se captura la excepción `NumberFormatException` y se muestra el mensaje `"Ingrese un número válido"`.
+
+---
+
+## 🗑️ Funcionamiento del botón Borrar
+
+El botón **Borrar** simplemente vacía los campos de entrada y resultado:
+
+```java
+private void BotonConvertir1ActionPerformed(java.awt.event.ActionEvent evt) {
+    Resultado.setText("");
+    Cantidad.setText(" ");
+}
+
+
