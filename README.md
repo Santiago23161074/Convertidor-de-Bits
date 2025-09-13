@@ -47,7 +47,7 @@ private void BotonConvertirActionPerformed(java.awt.event.ActionEvent evt) {
         Resultado.setText("Ingrese un número válido");
     }
 }
-
+```
 ## 🧠 Explicación paso a paso
 
 ### Obtención de datos de entrada
